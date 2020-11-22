@@ -47,5 +47,21 @@ class StatsServiceTest {
 
 
     }
+
+    @Test
+    void shouldMonthSalesLessThanAverage() {
+        int expected = 5;
+        int actual = service.LessThanAverage(purchases);
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    void shouldMonthSalesMoreThanAverage() {
+        int expected = 5;
+        int actual = service.MoreThanAverage(purchases);
+
+        assertEquals(expected, actual);
+    }
 }
+
 

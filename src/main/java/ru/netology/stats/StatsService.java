@@ -53,7 +53,7 @@ public class StatsService {
                 min = purchase;
             }
         }
-        return min;
+       return min;
     }
 
     public int getMonthMinSales(int[] purchases) {
@@ -68,5 +68,31 @@ public class StatsService {
             }
         }
         return monthWihMin;
+    }
+
+    public int LessThanAverage(int[] purchases) {
+        int average = average(purchases);
+        int count = 0;
+
+        for (int purchase : purchases){
+            if (purchase < average){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public int MoreThanAverage(int[] purchases) {
+        int average = average(purchases);
+        int count = 0;
+
+        for (int purchase : purchases){
+            if (purchase > average){
+                count++;
+            }
+        }
+
+        return count;
     }
 }
